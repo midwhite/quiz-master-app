@@ -1,10 +1,13 @@
-# quiz-master
+# QuizMaster
 
-> A Vue.js project
+> QuizMaster for Front Side
 
 ## Build Setup
 
 ``` bash
+# clone project
+git clone git@github.com:midwhite/quiz-master-app.git
+
 # install dependencies
 npm install
 
@@ -23,5 +26,3 @@ npm run unit
 # run all tests
 npm test
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
