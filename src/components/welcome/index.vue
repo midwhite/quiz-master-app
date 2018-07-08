@@ -1,5 +1,5 @@
 <template>
   <div id="WelcomeComponent">
-    <h2>Welcome to QuizMaster!</h2>
+    <h1>Welcome to QuizMaster!</h1>
   </div>
 </template>
