@@ -4,7 +4,7 @@ import Root from './root';
 import store from './store';
 import router from './router';
 
-import './assets/css/root.scss';
+import './assets/css/global.scss';
 
 Vue.use(Vuex);
 
