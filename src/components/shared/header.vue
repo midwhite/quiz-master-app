@@ -1,9 +1,28 @@
 <template>
   <header id="header">
     <img :src="require('@/assets/images/shared/logo.png')" id="logo" />
-    <div class="sign-in">Sign In</div>
+    <div class="main-btn sign-in" @click="toggleSignInModal">Sign In</div>
+    <sign-in-modal v-if="showSignInModal" @close="toggleSignInModal" />
   </header>
 </template>
+
+<script>
+  import SignInModal from './modals/sign-in-modal';
+
+  export default {
+    data: () => ({
+      showSignInModal: false,
+    }),
+    methods: {
+      toggleSignInModal() {
+        this.showSignInModal = !this.showSignInModal;
+      },
+    },
+    components: {
+      SignInModal,
+    },
+  };
+</script>
 
 <style lang="scss" scoped>
   @import '@/assets/css/variables.scss';
@@ -25,21 +44,5 @@
     width: 100px;
     top: 0px;
     right: 0px;
-    margin: 5px;
-    padding: 6px 0;
-    border: 1px solid $BaseColor;
-    background: #FFF;
-    color: $BaseColor;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0 0 0 rgba(0,0,0,.5);
-    transition: all .3s 0s ease;
-  }
-  .sign-in:hover {
-    background: $BaseColor;
-    color: #FFF;
-    box-shadow: 0 0 5px rgba(0,0,0,.5);
   }
 </style>
