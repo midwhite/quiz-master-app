@@ -31,7 +31,7 @@ export default class Api {
   }
 
   static handleErrors(error) {
-    // [TODO] エラー通知
+    // [TODO] show error messages as flash messages
     return Promise.reject(error);
   }
 
