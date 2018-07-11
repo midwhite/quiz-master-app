@@ -1,18 +1,22 @@
 <template>
   <header id="header">
     <img :src="require('@/assets/images/shared/logo.png')" id="logo" />
-    <div class="main-btn sign-in" @click="toggleSignInModal">Sign In</div>
+    <div class="main-btn sign-in" @click="toggleSignInModal">{{ $t('components.welcome.signUp') }}</div>
     <sign-in-modal v-if="showSignInModal" @close="toggleSignInModal" />
   </header>
 </template>
 
 <script>
+  import { mapState } from 'vuex';
   import SignInModal from './modals/sign-in-modal';
 
   export default {
     data: () => ({
       showSignInModal: false,
     }),
+    computed: {
+      ...mapState(['currentUser']),
+    },
     methods: {
       toggleSignInModal() {
         this.showSignInModal = !this.showSignInModal;
