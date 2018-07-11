@@ -49,6 +49,8 @@
         if (this.validateUser()) {
           this.signUp({ form: this.$el.querySelector('#SignUpForm') }).then(() => {
             this.$emit('close');
+          }).catch((error) => {
+            this.errors.push(...error.response.data.errors);
           });
         }
       },

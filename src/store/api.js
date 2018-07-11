@@ -25,7 +25,14 @@ export default class Api {
       .then(response => camelize(response.data));
   }
   static submit(path, form) {
-    return this.api().post(path, new FormData(form)).then(response => camelize(response.data));
+    return this.api().post(path, new FormData(form))
+      .then(response => camelize(response.data))
+      .catch(this.handleErrors);
+  }
+
+  static handleErrors(error) {
+    // [TODO] エラー通知
+    return Promise.reject(error);
   }
 
   /* eslint-disable new-cap */
