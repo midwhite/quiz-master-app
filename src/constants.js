@@ -8,4 +8,7 @@ export default class Constants {
   static get DEFAULT_LOCALE() { return 'en'; }
 
   static get EMAIL_REGEXP() { return /^[^@\s]+@[^@\s]+$/; }
+
+  static get PASSWORD_MIN_LENGTH() { return 6; }
+  static get PASSWORD_MAX_LENGTH() { return 128; }
 }

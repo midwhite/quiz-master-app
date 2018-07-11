@@ -18,4 +18,8 @@ export default {
       reject(error);
     });
   }),
+  signOut: ({ commit }) => {
+    localStorage.removeItem('token');
+    commit('signIn', {});
+  },
 };

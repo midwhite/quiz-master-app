@@ -64,15 +64,42 @@
       validateUser() {
         // initialize errors
         this.errors = [];
-        // validate required values
+        // required values
         this.requiredProps.forEach((prop) => {
           if (!this.user[prop]) {
             this.errors.push(this.$t('errors.isRequired', [this.$t(`models.user.attributes.${prop}`)]));
           }
         });
-        // validate email format
-        if (this.user.email && !this.user.email.match(Constants.EMAIL_REGEXP)) {
+        // return result to avoid TypeError for undefined
+        if (this.errors.length > 0) { return false; }
+
+        // email format
+        if (!this.user.email.match(Constants.EMAIL_REGEXP)) {
           this.errors.push(this.$t('errors.isInvalid', [this.$t('models.user.attributes.email')]));
+        }
+        // password confirmation
+        if (this.user.password !== this.user.passwordConfirmation) {
+          this.errors.push(
+            this.$t('errors.isInvalid', [this.$t('models.user.attributes.passwordConfirmation')]),
+          );
+        }
+        // password minimum length
+        if (this.user.password.length < Constants.PASSWORD_MIN_LENGTH) {
+          this.errors.push(
+            this.$t('errors.shouldBeMoreThanChars', [
+              this.$t('models.user.attributes.password'),
+              Constants.PASSWORD_MIN_LENGTH,
+            ]),
+          );
+        }
+        // password maximum length
+        if (this.user.password.length > Constants.PASSWORD_MAX_LENGTH) {
+          this.errors.push(
+            this.$t('errors.shouldBeLessThanChars', [
+              this.$t('models.user.attributes.password'),
+              Constants.PASSWORD_MAX_LENGTH,
+            ]),
+          );
         }
         // return result
         return this.errors.length === 0;

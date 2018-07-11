@@ -18,5 +18,7 @@ export default {
   errors: {
     isRequired: '{0}をご入力ください。',
     isInvalid: '{0}が不正です。',
+    shouldBeMoreThanChars: '{0}は{1}文字以上ご入力ください。',
+    shouldBeLessThanChars: '{0}の最大文字数は{1}文字です。',
   },
 };
