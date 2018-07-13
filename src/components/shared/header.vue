@@ -8,7 +8,7 @@
 
 <script>
   import { mapState } from 'vuex';
-  import SignInModal from './modals/sign-in-modal';
+  import SignInModal from '@/components/welcome/modals/sign-in-modal';
 
   export default {
     data: () => ({

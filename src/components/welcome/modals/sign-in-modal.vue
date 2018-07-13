@@ -1,37 +1,39 @@
 <template>
   <modal @close="$emit('close')">
-      <h3 slot="header">{{ $t('components.welcome.signUp') }}</h3>
-      <div slot="body">
-        <div class="row sign-in-tab">
-          <div class="col" v-for="tab of tabs">
-            <div class="sign-in-tab-item" :class="{ active: activeTab === tab }" @click="changeTab(tab)">{{ $t('components.welcome.' + tab) }}</div>
-          </div>
+    <h3 slot="header">{{ $t('components.welcome.signUp') }}</h3>
+    <div slot="body">
+      <div class="row sign-in-tab">
+        <div class="col" v-for="tab of tabs">
+          <div class="sign-in-tab-item" :class="{ active: activeTab === tab }" @click="changeTab(tab)">{{ $t('components.welcome.' + tab) }}</div>
         </div>
-        <div class="errors">
-          <div class="alert alert-danger" v-for="(error, i) of errors">
-            <span>{{ error }}</span>
-            <i class="close" @click="removeErrorMessage(i)">&times;</i>
-          </div>
+      </div>
+      <div class="errors">
+        <div class="alert alert-danger" v-for="(error, i) of errors">
+          <span>{{ error }}</span>
+          <i class="close" @click="removeErrorMessage(i)">&times;</i>
         </div>
-        <form id="SignUpForm" @submit.prevent="onSubmit">
-          <div class="form-group">
-            <label for="sign-up-email">{{ $t('models.user.attributes.email') }}</label>
-            <input type="email" name="user[email]" v-model="user.email" id="sign-up-email" class="form-control" :placeholder="$t('models.user.attributes.email')" />
-          </div>
-          <div class="form-group">
-            <label for="sign-up-password">{{ $t('models.user.attributes.password') }}</label>
-            <input type="password" name="user[password]" v-model="user.password" id="sign-up-password" class="form-control" :placeholder="$t('models.user.attributes.password')" />
-          </div>
-          <div class="form-group" v-if="isSignUpTab">
-            <label for="sign-up-password-confirmation">{{ $t('models.user.attributes.passwordConfirmation') }}</label>
-            <input type="password" name="user[password_confirmation]" v-model="user.passwordConfirmation" id="sign-up-password-confirmation" class="form-control" :placeholder="$t('models.user.attributes.passwordConfirmation')" />
-          </div>
-          <input type="submit" style="display: none;"></button>
-        </form>
       </div>
-      <div slot="footer">
-        <div class="main-btn submit-btn" @click="onSubmit">{{ $t('components.welcome.signUp') }}</div>
+      <form id="SignUpForm" @submit.prevent="onSubmit">
+        <div class="form-group">
+          <label for="sign-up-email">{{ $t('models.user.attributes.email') }}</label>
+          <input type="email" name="user[email]" v-model="user.email" id="sign-up-email" class="form-control" :placeholder="$t('models.user.attributes.email')" />
+        </div>
+        <div class="form-group">
+          <label for="sign-up-password">{{ $t('models.user.attributes.password') }}</label>
+          <input type="password" name="user[password]" v-model="user.password" id="sign-up-password" class="form-control" :placeholder="$t('models.user.attributes.password')" />
+        </div>
+        <div class="form-group" v-if="isSignUpTab">
+          <label for="sign-up-password-confirmation">{{ $t('models.user.attributes.passwordConfirmation') }}</label>
+          <input type="password" name="user[password_confirmation]" v-model="user.passwordConfirmation" id="sign-up-password-confirmation" class="form-control" :placeholder="$t('models.user.attributes.passwordConfirmation')" />
+        </div>
+        <input type="submit" style="display: none;"></button>
+      </form>
+    </div>
+    <div slot="footer">
+      <div class="main-btn submit-btn" @click="onSubmit">
+        {{ (isSignUpTab) ? $t('components.welcome.signUp') : $t('components.welcome.signIn') }}
       </div>
+    </div>
   </modal>
 </template>
 
