@@ -15,7 +15,7 @@
       showSignInModal: false,
     }),
     computed: {
-      ...mapState(['currentUser']),
+      ...mapState(['isSignedIn']),
     },
     methods: {
       toggleSignInModal() {
