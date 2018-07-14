@@ -1,6 +1,8 @@
 <template>
   <div id="quizzes-component">
-    <h1>QuizzesComponent</h1>
+    <div v-if="loaded">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -8,6 +10,9 @@
   import { mapState, mapActions } from 'vuex';
 
   export default {
+    data: () => ({
+      loaded: false,
+    }),
     computed: {
       ...mapState(['quizzes']),
     },
@@ -15,7 +20,10 @@
       ...mapActions(['getQuizzes']),
     },
     created() {
-      this.getQuizzes();
+      // display children components after quizzes loaded
+      this.getQuizzes().then(() => {
+        this.loaded = true;
+      });
     },
   };
 </script>
