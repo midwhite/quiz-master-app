@@ -6,14 +6,16 @@
 </template>
 
 <script>
-  import moment from 'moment';
+  import { mapState } from 'vuex';
+  import Util from '@/util';
 
   export default {
     props: ['quiz'],
     computed: {
+      ...mapState(['currentUser']),
       createdAt() {
-        const createdAt = moment(this.quiz.createdAt);
-        return createdAt.format('YYYY-MM-DD hh:mm');
+        const createdAt = Util.timeWithZone(this.quiz.createdAt, this.currentUser.timezone);
+        return createdAt.format('YYYY-MM-DD HH:mm');
       },
     },
   };

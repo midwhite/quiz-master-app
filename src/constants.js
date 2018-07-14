@@ -8,6 +8,8 @@ export default class Constants {
   static get LOCALE_KEY() { return 'locale'; }
   static get DEFAULT_LOCALE() { return 'en'; }
 
+  static get DEFAULT_TIMEZONE() { return 'UTC'; }
+
   static get EMAIL_REGEXP() { return /^[^@\s]+@[^@\s]+$/; }
 
   static get PASSWORD_MIN_LENGTH() { return 6; }

@@ -1,3 +1,6 @@
+import moment from 'moment-timezone';
+import Constants from '@/constants';
+
 export default class Util {
   /* eslint-disable no-param-reassign */
   // Rename keys from camel case to snake case
@@ -30,5 +33,9 @@ export default class Util {
   static randomStr(length) {
     const string = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_';
     return [...Array(length)].map(() => string.substr(Util.randomNum(string.length), 1)).join('');
+  }
+
+  static timeWithZone(time, timezone) {
+    return moment.tz(time, Constants.DEFAULT_TIMEZONE).clone().tz(timezone);
   }
 }
