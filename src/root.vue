@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex';
+  import { mapState, mapActions } from 'vuex';
   import HeaderComponent from '@/components/shared/header';
   import FooterComponent from '@/components/shared/footer';
   import WelcomeComponent from '@/components/welcome';
@@ -19,10 +19,19 @@
     computed: {
       ...mapState(['isSignedIn']),
     },
+    methods: {
+      ...mapActions(['getMe']),
+    },
     components: {
       HeaderComponent,
       FooterComponent,
       WelcomeComponent,
+    },
+    created() {
+      // Auto Login
+      if (localStorage.getItem('token')) {
+        this.getMe();
+      }
     },
   };
 </script>

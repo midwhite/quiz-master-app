@@ -17,6 +17,10 @@ export default {
       reject(error);
     });
   }),
+  getMe: ({ commit }) =>
+    api.get('/v1/users/me').then((data) => {
+      commit('signIn', data);
+    }),
   signOut: ({ commit }) => {
     commit('signIn', {});
   },
