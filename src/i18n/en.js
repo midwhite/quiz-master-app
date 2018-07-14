@@ -6,6 +6,9 @@ export default {
       signUp: 'Sign Up',
       signOut: 'Sign Out',
     },
+    myQuizzes: {
+      title: 'Quiz List',
+    },
   },
   models: {
     user: {
@@ -13,6 +16,32 @@ export default {
         email: 'Email',
         password: 'Password',
         passwordConfirmation: 'Password (Confirmation)',
+      },
+    },
+    quiz: {
+      attributes: {
+        answer: 'Answer',
+        answers: 'Answers',
+        canScorePartial: 'Enable Partial Score',
+        createdAt: 'created at',
+        explanation: 'Explanation',
+        hasMultiAnswers: 'Multiple Answers',
+        isSelection: 'Selection',
+        question: 'Question',
+        title: 'Title',
+        updatedAt: 'updated at',
+      },
+      canScorePartial: {
+        true: 'enable',
+        false: 'diable',
+      },
+      hasMultiAnswers: {
+        true: 'enable',
+        false: 'diable',
+      },
+      isSelection: {
+        true: 'Yes',
+        false: 'No',
       },
     },
   },

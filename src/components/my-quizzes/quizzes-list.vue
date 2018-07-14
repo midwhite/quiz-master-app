@@ -1,6 +1,6 @@
 <template>
   <div id="QuizzesListComponent">
-    <h1>QuizzesListComponent</h1>
+    <h1>{{ $t('components.myQuizzes.title') }}</h1>
     <div class="quizzes-list">
       <quiz :quiz="quiz" :key="'my-quiz-thumbnail-' + quiz.id" v-for="quiz of myQuizzes" />
     </div>
@@ -20,3 +20,10 @@
     },
   };
 </script>
+
+<style scoped>
+  h1 {
+    padding: 10px 0px;
+    margin: 0px;
+  }
+</style>
