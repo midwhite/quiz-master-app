@@ -30,7 +30,7 @@
       </form>
     </div>
     <div slot="footer">
-      <div class="main-btn submit-btn" @click="onSubmit">
+      <div class="main-btn submit-btn" id="sign-up-button" @click="onSubmit">
         {{ (isSignUpTab) ? $t('components.welcome.signUp') : $t('components.welcome.signIn') }}
       </div>
     </div>
