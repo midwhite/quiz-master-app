@@ -1,6 +1,7 @@
 import axios from 'axios';
 import camelize from 'camelize';
 import Constants from '@/constants';
+import StorageService from '@/services/storage.service';
 import Util from '@/util';
 
 export default class Api {
@@ -37,8 +38,8 @@ export default class Api {
 
   /* eslint-disable new-cap */
   static api() {
-    const token = window.localStorage.getItem(Constants.TOKEN_KEY) || window[Constants.TOKEN_KEY];
-    const locale = localStorage.getItem('locale') || Constants.DEFAULT_LOCALE;
+    const token = StorageService.getToken();
+    const locale = StorageService.getLocale();
     return new axios.create({
       baseURL: `${Constants.API_DOMAIN}/${locale}`,
       headers: { Authorization: token },

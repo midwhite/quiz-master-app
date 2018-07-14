@@ -5,6 +5,7 @@ export default class Constants {
 
   static get TOKEN_KEY() { return 'token'; }
 
+  static get LOCALE_KEY() { return 'locale'; }
   static get DEFAULT_LOCALE() { return 'en'; }
 
   static get EMAIL_REGEXP() { return /^[^@\s]+@[^@\s]+$/; }

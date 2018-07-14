@@ -11,6 +11,7 @@
 
 <script>
   import { mapState, mapActions } from 'vuex';
+  import StorageService from '@/services/storage.service';
   import HeaderComponent from '@/components/shared/header';
   import FooterComponent from '@/components/shared/footer';
   import WelcomeComponent from '@/components/welcome';
@@ -29,7 +30,7 @@
     },
     created() {
       // Auto Login
-      if (localStorage.getItem('token')) {
+      if (StorageService.getToken()) {
         this.getMe();
       }
     },

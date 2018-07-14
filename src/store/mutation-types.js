@@ -1,5 +1,6 @@
-/* eslint-disable no-param-reassign */
+import StorageService from '@/services/storage.service';
 
+/* eslint-disable no-param-reassign */
 export default {
   setMyQuizzes(state, { quizzes }) {
     state.myQuizzes = quizzes;
@@ -8,11 +9,10 @@ export default {
     state.currentUser = user || {};
     state.isSignedIn = !!user;
     if (user) {
-      localStorage.setItem('token', user.accessToken);
+      StorageService.setToken(user.accessToken);
     } else {
-      localStorage.removeItem('token');
+      StorageService.removeToken();
     }
   },
 };
-
 /* eslint-enable */
