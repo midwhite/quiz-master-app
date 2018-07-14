@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import WelcomeComponent from '@/components/welcome';
+import QuizzesComponent from '@/components/quizzes/';
 
 Vue.use(Router);
 
 export default new Router({
   routes: [
-    { path: '/', name: 'Welcome', component: WelcomeComponent },
+    { path: '/', name: 'quizzes', component: QuizzesComponent },
   ],
 });

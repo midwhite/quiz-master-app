@@ -1,29 +1,16 @@
 <template>
   <header id="header">
     <img :src="require('@/assets/images/shared/logo.png')" id="logo" />
-    <div class="main-btn sign-in" @click="toggleSignInModal">{{ $t('components.welcome.signUp') }}</div>
-    <sign-in-modal v-if="showSignInModal" @close="toggleSignInModal" />
+    <div class="main-btn sign-out" @click="signOut">{{ $t('components.welcome.signOut') }}</div>
   </header>
 </template>
 
 <script>
-  import { mapState } from 'vuex';
-  import SignInModal from '@/components/welcome/modals/sign-in-modal';
+  import { mapActions } from 'vuex';
 
   export default {
-    data: () => ({
-      showSignInModal: false,
-    }),
-    computed: {
-      ...mapState(['isSignedIn']),
-    },
     methods: {
-      toggleSignInModal() {
-        this.showSignInModal = !this.showSignInModal;
-      },
-    },
-    components: {
-      SignInModal,
+      ...mapActions(['signOut']),
     },
   };
 </script>
@@ -43,7 +30,7 @@
     height: 40px;
     margin: 5px;
   }
-  .sign-in {
+  .sign-out {
     position: absolute;
     width: 100px;
     top: 0px;

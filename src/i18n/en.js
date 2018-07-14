@@ -4,6 +4,7 @@ export default {
       title: 'Welcome to QuizMaster!',
       signIn: 'Sign In',
       signUp: 'Sign Up',
+      signOut: 'Sign Out',
     },
   },
   models: {

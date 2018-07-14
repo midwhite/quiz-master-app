@@ -18,7 +18,6 @@ export default {
     });
   }),
   signOut: ({ commit }) => {
-    localStorage.removeItem('token');
     commit('signIn', {});
   },
 };

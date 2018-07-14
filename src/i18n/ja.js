@@ -4,6 +4,7 @@ export default {
       title: 'クイズ王へようこそ！',
       signIn: 'ログイン',
       signUp: '無料登録',
+      signOut: 'ログアウト',
     },
   },
   models: {

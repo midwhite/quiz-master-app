@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  <welcome-component v-if="!isSignedIn" />
+  <div id="app" v-else>
     <header-component />
     <main id="main" class="container-fluid">
       <router-view />
@@ -9,13 +10,19 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex';
   import HeaderComponent from '@/components/shared/header';
   import FooterComponent from '@/components/shared/footer';
+  import WelcomeComponent from '@/components/welcome';
 
   export default {
+    computed: {
+      ...mapState(['isSignedIn']),
+    },
     components: {
       HeaderComponent,
       FooterComponent,
+      WelcomeComponent,
     },
   };
 </script>
