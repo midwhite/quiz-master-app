@@ -1,6 +1,11 @@
 import api from './api';
 
 export default {
+  getQuizzes: ({ commit }, params = {}) => {
+    api.get('/v1/quizzes', params).then((data) => {
+      commit('setMyQuizzes', data);
+    });
+  },
   signUp: ({ commit }, { form }) => new Promise((resolve, reject) => {
     api.submit('/v1/users/sign_up', form).then((data) => {
       commit('signIn', data);
