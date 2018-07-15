@@ -14,6 +14,7 @@ export default {
     },
     quizMode: {
       title: 'Quiz Mode',
+      letsAnswer: 'Quiz!',
     },
   },
   models: {
@@ -45,6 +46,7 @@ export default {
     edit: 'Edit',
     list: 'List',
     save: 'Save',
+    submit: 'Submit',
   },
   warnings: {
     beforeDelete: 'DELETE: Are you sure?',

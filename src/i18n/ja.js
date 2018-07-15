@@ -14,6 +14,7 @@ export default {
     },
     quizMode: {
       title: 'クイズモード',
+      letsAnswer: 'クイズ！',
     },
   },
   models: {
@@ -45,6 +46,7 @@ export default {
     edit: '編集',
     list: '一覧',
     save: '保存',
+    submit: '送信',
   },
   warnings: {
     beforeDelete: '本当に削除しますか？',
