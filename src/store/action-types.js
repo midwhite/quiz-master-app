@@ -7,8 +7,13 @@ export default {
       commit('setMyQuizzes', data);
     });
   },
-  createQuizzes: ({ commit }, { quiz }) => {
+  createQuiz: ({ commit }, { quiz }) => {
     return api.post('/v1/quizzes', { quiz }).then((data) => {
+      commit('addMyQuizzes', data);
+    });
+  },
+  updateQuiz: ({ commit }, { quiz }) => {
+    return api.put(`/v1/quizzes/${quiz.id}`, { quiz }).then((data) => {
       commit('addMyQuizzes', data);
     });
   },

@@ -1,5 +1,8 @@
 <template>
   <div class="quiz-form-component">
+    <div class="errors">
+      <div class="alert alert-danger" v-for="error of errors">{{ error }}</div>
+    </div>
     <form @submit="onSubmit">
       <div class="form-group">
         <input type="text" name="title" v-model="quiz.title" class="form-control" :placeholder="$t('models.quiz.attributes.title')" />
@@ -11,7 +14,7 @@
 
       <div class="form-group">
         <label for="quiz-form-answer">{{ $t('models.quiz.attributes.answer') }}</label>
-        <input type="text" name="answer" v-model="quiz.answer" id="quiz-form-answer" class="form-control" :placeholder="$t('models.quiz.attributes.answer')" />
+        <input type="text" name="answer" v-model="quiz.correctAnswer" id="quiz-form-answer" class="form-control" :placeholder="$t('models.quiz.attributes.answer')" />
       </div>
 
       <div class="form-group">
@@ -36,9 +39,11 @@
   export default {
     data: () => ({
       quiz: {},
+      errors: [],
     }),
     props: ['target-quiz'],
     computed: {
+      requiredProps: () => ['title', 'question', 'correctAnswer'],
       questionEditorOption() {
         return {
           placeholder: this.$t('models.quiz.attributes.question'),
@@ -57,9 +62,24 @@
       onExplanationEditorChange({ html }) {
         this.quiz.explanation = html;
       },
+      validateQuiz() {
+        // initialize errors
+        this.errors = [];
+        // validate required values
+        this.requiredProps.forEach((prop) => {
+          if (!this.quiz[prop]) {
+            const message = this.$t('errors.isRequired', [this.$t(`models.quiz.attributes.${prop}`)]);
+            this.errors.push(message);
+          }
+        });
+        // return result
+        return this.errors.length === 0;
+      },
       onSubmit(event) {
         event.preventDefault();
-        this.$emit('submit', this.quiz);
+        if (this.validateQuiz()) {
+          this.$emit('submit', { quiz: this.quiz });
+        }
       },
       onCancel() {
         this.$emit('cancel');

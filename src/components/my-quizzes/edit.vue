@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex';
+  import { mapState, mapActions } from 'vuex';
   import QuizForm from './quiz-form';
 
   export default {
@@ -20,7 +20,12 @@
       },
     },
     methods: {
-      onSubmit() {},
+      ...mapActions(['updateQuiz']),
+      onSubmit({ quiz }) {
+        this.updateQuiz({ quiz }).then(() => {
+          this.$router.go(-1);
+        });
+      },
       onCancel() {
         this.$router.go(-1);
       },

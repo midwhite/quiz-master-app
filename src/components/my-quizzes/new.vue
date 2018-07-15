@@ -17,8 +17,12 @@
       newQuiz: {},
     }),
     methods: {
-      ...mapActions([]),
-      onSubmit() {},
+      ...mapActions(['createQuiz']),
+      onSubmit({ quiz }) {
+        this.createQuiz({ quiz }).then(() => {
+          this.$router.go(-1);
+        });
+      },
       onCancel() {
         this.$router.go(-1);
       },
