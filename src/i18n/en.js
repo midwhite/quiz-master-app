@@ -29,8 +29,10 @@ export default {
       },
     },
     quiz: {
+      name: 'Quiz',
       attributes: {
         answer: 'Answer',
+        correctAnswer: 'Correct Answer',
         createdAt: 'created at',
         explanation: 'Explanation',
         options: 'Options',
@@ -56,6 +58,10 @@ export default {
     redo: 'Redo',
     save: 'Save',
     submit: 'Submit',
+  },
+  messages: {
+    created: '{0} is created.',
+    saved: '{0} is saved.',
   },
   warnings: {
     beforeDelete: 'DELETE: Are you sure?',

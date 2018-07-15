@@ -10,6 +10,7 @@ export default {
   createQuiz: ({ commit }, { quiz }) => {
     return api.post('/v1/quizzes', { quiz }).then((data) => {
       commit('addMyQuizzes', data);
+      return data;
     });
   },
   updateQuiz: ({ commit }, { quiz }) => {

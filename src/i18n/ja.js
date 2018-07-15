@@ -29,8 +29,10 @@ export default {
       },
     },
     quiz: {
+      name: 'クイズ',
       attributes: {
         answer: '回答',
+        correctAnswer: '模範回答',
         createdAt: '作成日時',
         explanation: '解説',
         options: '選択肢',
@@ -56,6 +58,10 @@ export default {
     redo: 'やり直す',
     save: '保存',
     submit: '送信',
+  },
+  messages: {
+    created: '{0}を新規作成しました。',
+    saved: '{0}を保存しました。',
   },
   warnings: {
     beforeDelete: '本当に削除しますか？',

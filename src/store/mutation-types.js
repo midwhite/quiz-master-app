@@ -35,5 +35,8 @@ export default {
       StorageService.removeToken();
     }
   },
+  setMessage(state, message) {
+    state.message = message;
+  },
 };
 /* eslint-enable */

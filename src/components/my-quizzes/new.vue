@@ -16,8 +16,9 @@
     methods: {
       ...mapActions(['createQuiz']),
       onSubmit({ quiz }) {
-        this.createQuiz({ quiz }).then(() => {
-          this.$router.go(-1);
+        this.createQuiz({ quiz }).then((data) => {
+          this.$router.replace({ name: 'EditQuiz', params: { id: data.quiz.id } });
+          this.$store.commit('setMessage', this.$t('messages.saved', [this.$t('models.quiz.name')]));
         });
       },
       onCancel() {

@@ -6,27 +6,30 @@
       <router-view />
     </main>
     <footer-component />
+    <snackbar-component v-if="message" />
   </div>
 </template>
 
 <script>
   import { mapState, mapActions } from 'vuex';
   import StorageService from '@/services/storage.service';
+  import SnackbarComponent from '@/components/shared/snackbar';
   import HeaderComponent from '@/components/shared/header';
   import FooterComponent from '@/components/shared/footer';
   import WelcomeComponent from '@/components/welcome';
 
   export default {
     computed: {
-      ...mapState(['isSignedIn']),
+      ...mapState(['isSignedIn', 'message']),
     },
     methods: {
       ...mapActions(['getMe']),
     },
     components: {
+      WelcomeComponent,
+      SnackbarComponent,
       HeaderComponent,
       FooterComponent,
-      WelcomeComponent,
     },
     created() {
       // Auto Login
