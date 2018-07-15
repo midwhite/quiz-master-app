@@ -36,14 +36,16 @@
       ...mapActions(['answerQuiz']),
       onSubmit(event) {
         event.preventDefault();
-        if (this.answer.content) {
-          this.answerQuiz({ answer: this.answer, quiz: this.quiz }).then((data) => {
-            this.answer.result = data.result;
-            this.correctAnswer = data.quiz.correctAnswer;
-            this.explanation = data.quiz.explanation;
-            this.showExplanationModal = true;
-          });
+        if (!this.answer.content) {
+          this.$store.commit('setMessage', this.$t('errors.isRequired', [this.$t('models.quiz.attributes.answer')]));
+          return;
         }
+        this.answerQuiz({ answer: this.answer, quiz: this.quiz }).then((data) => {
+          this.answer.result = data.result;
+          this.correctAnswer = data.quiz.correctAnswer;
+          this.explanation = data.quiz.explanation;
+          this.showExplanationModal = true;
+        });
       },
       onClose() {
         this.$router.go(-1);

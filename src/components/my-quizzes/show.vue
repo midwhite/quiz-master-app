@@ -26,9 +26,11 @@
     methods: {
       ...mapActions(['deleteQuiz']),
       onDelete() {
+        const message = this.$t('messages.deleted', [this.$t('models.quiz.name')]);
         if (confirm(this.$t('warnings.beforeDelete'))) {
           this.deleteQuiz({ quiz: this.quiz }).then(() => {
             this.$router.replace({ name: 'QuizzesList' });
+            this.$store.commit('setMessage', message);
           });
         }
       },

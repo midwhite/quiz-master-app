@@ -61,6 +61,7 @@ export default {
   },
   messages: {
     created: '{0}を新規作成しました。',
+    deleted: '{0}を削除しました。',
     saved: '{0}を保存しました。',
     thanksForSignUp: 'ご登録ありがとうございます！',
     thanksForSignIn: 'ログインしました',

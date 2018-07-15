@@ -21,8 +21,9 @@
     methods: {
       ...mapActions(['updateQuiz']),
       onSubmit({ quiz }) {
+        const message = this.$t('messages.saved', [this.$t('models.quiz.name')]);
         this.updateQuiz({ quiz }).then(() => {
-          this.$router.go(-1);
+          this.$store.commit('setMessage', message);
         });
       },
       onCancel() {

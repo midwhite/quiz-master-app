@@ -2,7 +2,7 @@
   <div class="quiz-component">
     <router-link :to="{ name: 'AnswerQuiz', params: { id: quiz.id } }" class="quiz-card-link">
       <h3>{{ quiz.title }}</h3>
-      <p class="created-at">{{ $t('models.quiz.attributes.createdAt') }}: {{ createdAt }}</p>
+      <p class="created-at">{{ createdAt }}</p>
       <img :src="resultMark" class="result-mark" v-if="resultMark" />
     </router-link>
   </div>
@@ -31,6 +31,9 @@
 </script>
 
 <style>
+  h3 {
+    font-size: 14px;
+  }
   .quiz-component {
     position: relative;
     height: 150px;
@@ -44,6 +47,7 @@
     left: 15px;
     right: 15px;
     bottom: 0px;
+    font-size: 12px;
     text-align: right;
   }
   .quiz-card-link {
