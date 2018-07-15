@@ -1,19 +1,10 @@
-import { mount, createLocalVue } from '@vue/test-utils';
-import messages from '@/i18n';
+import { mount } from '@vue/test-utils';
 import QuizzesListComponent from '@/components/my-quizzes/quizzes-list';
+import { myQuizzes } from '../../factories/quizzes';
 
 describe('quizzes-list.vue', () => {
   let $store;
-  let dispatchSpy;
-  let commitSpy;
   let wrapper;
-  let myQuizzes = [
-    { id: 1, title: 'QuizTitle', correctAnswer: 'CorrectAnswer' },
-    { id: 2, title: 'QuizTitle', correctAnswer: 'CorrectAnswer' },
-    { id: 3, title: 'QuizTitle', correctAnswer: 'CorrectAnswer' },
-    { id: 4, title: 'QuizTitle', correctAnswer: 'CorrectAnswer' },
-    { id: 5, title: 'QuizTitle', correctAnswer: 'CorrectAnswer' },
-  ];
 
   beforeEach(() => {
     // prepare dispatch spy
@@ -25,8 +16,6 @@ describe('quizzes-list.vue', () => {
         myQuizzes,
       },
     };
-    dispatchSpy = sinon.spy($store, 'dispatch');
-    commitSpy = sinon.spy($store, 'commit');
     // add spy to wrapper as mocks with i18n mock
     wrapper = mount(QuizzesListComponent, {
       mocks: {
