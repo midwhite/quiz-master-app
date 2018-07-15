@@ -10,15 +10,20 @@
         <input type="submit" :value="$t('buttons.submit')" id="quiz-mode-answer-submit" class="main-btn submit-btn" />
       </form>
     </div>
+    <result-modal :correct-answer="correctAnswer" :answer="answer" :explanation="explanation" @close="onClose" v-if="showExplanationModal" />
   </div>
 </template>
 
 <script>
   import { mapState, mapActions } from 'vuex';
+  import ResultModal from './modals/result-modal';
 
   export default {
     data: () => ({
       answer: {},
+      showExplanationModal: false,
+      correctAnswer: '',
+      explanation: '',
     }),
     computed: {
       ...mapState(['myQuizzes']),
@@ -32,11 +37,20 @@
       onSubmit(event) {
         event.preventDefault();
         if (this.answer.content) {
-          this.answerQuiz({ answer: this.answer, quiz: this.quiz }).then(() => {
-            this.$router.go(-1);
+          this.answerQuiz({ answer: this.answer, quiz: this.quiz }).then((data) => {
+            this.answer.result = data.result;
+            this.correctAnswer = data.quiz.correctAnswer;
+            this.explanation = data.quiz.explanation;
+            this.showExplanationModal = true;
           });
         }
       },
+      onClose() {
+        this.$router.go(-1);
+      },
+    },
+    components: {
+      ResultModal,
     },
   };
 </script>

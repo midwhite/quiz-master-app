@@ -15,6 +15,9 @@ export default {
     quizMode: {
       title: 'Quiz Mode',
       letsAnswer: 'Quiz!',
+      result: 'Result',
+      yourAnswer: 'Your Answer',
+      correctAnswer: 'Correct Answer',
     },
   },
   models: {
@@ -35,6 +38,10 @@ export default {
         title: 'Title',
         updatedAt: 'updated at',
       },
+      result: {
+        correct: 'Correct',
+        incorrect: 'Incorrect',
+      },
     },
   },
   buttons: {
@@ -45,6 +52,8 @@ export default {
     delete: 'Delete',
     edit: 'Edit',
     list: 'List',
+    ok: 'OK',
+    redo: 'Redo',
     save: 'Save',
     submit: 'Submit',
   },

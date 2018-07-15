@@ -23,8 +23,9 @@ export default {
     });
   },
   answerQuiz: ({ commit }, { quiz, answer }) => {
-    return api.post(`/v1/quizzes/${quiz.id}/check`, { answer }).then(({ result }) => {
-      commit('setResultToAnswer', { quiz, result });
+    return api.post(`/v1/quizzes/${quiz.id}/check`, { answer }).then((data) => {
+      commit('setResultToAnswer', data);
+      return data;
     });
   },
   signUp: ({ commit }, { form }) => new Promise((resolve, reject) => {

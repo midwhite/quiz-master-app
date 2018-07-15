@@ -15,6 +15,9 @@ export default {
     quizMode: {
       title: 'クイズモード',
       letsAnswer: 'クイズ！',
+      result: '結果',
+      yourAnswer: 'あなたの回答',
+      correctAnswer: '模範回答',
     },
   },
   models: {
@@ -35,6 +38,10 @@ export default {
         title: 'タイトル',
         updatedAt: '更新日時',
       },
+      result: {
+        correct: '正解',
+        incorrect: '不正解',
+      },
     },
   },
   buttons: {
@@ -45,6 +52,8 @@ export default {
     delete: '削除',
     edit: '編集',
     list: '一覧',
+    ok: 'OK',
+    redo: 'やり直す',
     save: '保存',
     submit: '送信',
   },
