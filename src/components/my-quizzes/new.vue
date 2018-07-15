@@ -4,7 +4,7 @@
       <router-link :to="{ name: 'QuizzesList' }" class="main-btn menu-item">{{ $t('buttons.list') }}</router-link>
     </div>
     <h1>{{ $t('components.myQuizzes.newQuiz') }}</h1>
-    <quiz-form :quiz="quiz" @submit="onSubmit" />
+    <quiz-form :quiz="newQuiz" @submit="onSubmit" @cancel="onCancel" />
   </div>
 </template>
 
@@ -13,9 +13,13 @@
   import QuizForm from './quiz-form';
 
   export default {
+    data: () => ({
+      newQuiz: {},
+    }),
     methods: {
       ...mapActions([]),
       onSubmit() {},
+      onCancel() {},
     },
     components: {
       QuizForm,

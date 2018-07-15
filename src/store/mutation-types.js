@@ -6,6 +6,7 @@ export default {
     state.myQuizzes = quizzes;
   },
   signIn(state, { user }) {
+    // if use exists: sign in; else: sign out
     state.currentUser = user || {};
     state.isSignedIn = !!user;
     if (user) {

@@ -3,7 +3,7 @@
     <div class="menu-list">
       <router-link :to="{ name: 'ShowQuiz', params: quiz.id }">{{ $t('buttons.back') }}</router-link>
     </div>
-    <quiz-form :quiz="quiz" @submit="onSubmit" />
+    <quiz-form :quiz="quiz" @submit="onSubmit" @cancel="onCancel" />
   </div>
 </template>
 
@@ -21,6 +21,7 @@
     },
     methods: {
       onSubmit() {},
+      onCancel() {},
     },
     components: {
       QuizForm,
