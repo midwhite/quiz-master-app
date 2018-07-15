@@ -10,6 +10,7 @@ export default {
       title: 'クイズ一覧',
       newQuiz: '新規クイズ作成',
       noQuizFound: 'クイズがありません。新しいクイズを作成しましょう！',
+      noExplanation: '解説はありません。',
     },
   },
   models: {

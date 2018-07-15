@@ -8,6 +8,10 @@ export default {
   addMyQuizzes(state, { quiz }) {
     state.myQuizzes = [quiz].concat(state.myQuizzes);
   },
+  replaceMyQuizz(state, { quiz }) {
+    const index = state.myQuizzes.findIndex(_quiz => _quiz.id === quiz.id);
+    state.myQuizzes.splice(index, 1, quiz);
+  },
   signIn(state, { user }) {
     // if use exists: sign in; else: sign out
     state.currentUser = user || {};

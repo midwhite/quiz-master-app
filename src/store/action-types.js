@@ -14,7 +14,7 @@ export default {
   },
   updateQuiz: ({ commit }, { quiz }) => {
     return api.put(`/v1/quizzes/${quiz.id}`, { quiz }).then((data) => {
-      commit('addMyQuizzes', data);
+      commit('replaceMyQuizz', data);
     });
   },
   signUp: ({ commit }, { form }) => new Promise((resolve, reject) => {

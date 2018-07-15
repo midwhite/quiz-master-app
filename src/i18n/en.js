@@ -10,6 +10,7 @@ export default {
       title: 'Quiz List',
       newQuiz: 'New Quiz',
       noQuizFound: 'No quiz found. Please create your quiz!',
+      noExplanation: 'No Explanation',
     },
   },
   models: {
