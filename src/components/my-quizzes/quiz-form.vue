@@ -26,7 +26,10 @@
         <input type="text" name="answer" v-model="quiz.correctAnswer" id="quiz-form-answer" class="form-control" :placeholder="$t('models.quiz.attributes.answer')" />
       </div>
 
-      <input type="submit" :value="$t('buttons.save')" id="quiz-form-submit" class="main-btn submit-btn" />
+      <div class="clearfix">
+        <input type="submit" :value="$t('buttons.save')" id="quiz-form-submit" class="main-btn submit-btn" />
+        <input type="button" :value="$t('buttons.cancel')" id="quiz-form-submit" class="main-btn submit-btn" @click="onCancel" />
+      </div>
     </form>
   </div>
 </template>
@@ -52,5 +55,6 @@
 <style scoped>
   .submit-btn {
     width: 100px;
+    float: left;
   }
 </style>

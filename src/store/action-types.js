@@ -7,9 +7,9 @@ export default {
       commit('setMyQuizzes', data);
     });
   },
-  createQuizzes: ({ commit }, { quizzes }) => {
-    return api.post('/v1/quizzes', { quizzes }).then((data) => {
-      commit('setMyQuizzes', data);
+  createQuizzes: ({ commit }, { quiz }) => {
+    return api.post('/v1/quizzes', { quiz }).then((data) => {
+      commit('addMyQuizzes', data);
     });
   },
   signUp: ({ commit }, { form }) => new Promise((resolve, reject) => {

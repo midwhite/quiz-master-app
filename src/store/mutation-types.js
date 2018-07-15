@@ -5,6 +5,9 @@ export default {
   setMyQuizzes(state, { quizzes }) {
     state.myQuizzes = quizzes;
   },
+  addMyQuizzes(state, { quiz }) {
+    state.myQuizzes = [quiz].concat(state.myQuizzes);
+  },
   signIn(state, { user }) {
     // if use exists: sign in; else: sign out
     state.currentUser = user || {};

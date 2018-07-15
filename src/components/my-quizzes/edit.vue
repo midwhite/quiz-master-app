@@ -21,7 +21,9 @@
     },
     methods: {
       onSubmit() {},
-      onCancel() {},
+      onCancel() {
+        this.$router.go(-1);
+      },
     },
     components: {
       QuizForm,
