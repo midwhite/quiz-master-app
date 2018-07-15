@@ -8,6 +8,8 @@ export default {
     },
     myQuizzes: {
       title: 'Quiz List',
+      newQuiz: 'New Quiz',
+      noQuizFound: 'No quiz found. Please create your quiz!',
     },
   },
   models: {
@@ -47,7 +49,12 @@ export default {
   },
   buttons: {
     back: 'Back',
+    cancel: 'Cancel',
+    comfirm: 'Comfirm',
+    create: 'Create',
     edit: 'Edit',
+    list: 'List',
+    save: 'Save',
   },
   errors: {
     isRequired: '{0} is required.',

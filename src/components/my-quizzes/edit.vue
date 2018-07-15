@@ -3,7 +3,7 @@
     <div class="menu-list">
       <router-link :to="{ name: 'ShowQuiz', params: quiz.id }">{{ $t('buttons.back') }}</router-link>
     </div>
-    <quiz-form :quiz="quiz" />
+    <quiz-form :quiz="quiz" @submit="onSubmit" />
   </div>
 </template>
 
@@ -18,6 +18,9 @@
         const quizId = Number(this.$route.params.id);
         return this.myQuizzes.find(quiz => quiz.id === quizId);
       },
+    },
+    methods: {
+      onSubmit() {},
     },
     components: {
       QuizForm,

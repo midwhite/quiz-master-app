@@ -8,6 +8,8 @@ export default {
     },
     myQuizzes: {
       title: 'クイズ一覧',
+      newQuiz: '新規クイズ作成',
+      noQuizFound: 'クイズがありません。新しいクイズを作成しましょう！',
     },
   },
   models: {
@@ -47,7 +49,12 @@ export default {
   },
   buttons: {
     back: '戻る',
+    cancel: 'キャンセル',
+    comfirm: '確認',
+    create: '新規作成',
     edit: '編集',
+    list: '一覧',
+    save: '保存',
   },
   errors: {
     isRequired: '{0}をご入力ください。',
