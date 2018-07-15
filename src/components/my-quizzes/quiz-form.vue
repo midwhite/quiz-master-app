@@ -1,7 +1,10 @@
 <template>
   <div class="quiz-form-component">
     <div class="errors">
-      <div class="alert alert-danger" v-for="error of errors">{{ error }}</div>
+      <div class="alert alert-danger" v-for="(error, i) of errors">
+        <span>{{ error }}</span>
+        <i class="close" @click="removeErrorMessage(i)">&times;</i>
+      </div>
     </div>
     <form @submit="onSubmit">
       <div class="form-group">
@@ -74,6 +77,9 @@
         });
         // return result
         return this.errors.length === 0;
+      },
+      removeErrorMessage(i) {
+        this.errors.splice(i, 1);
       },
       onSubmit(event) {
         event.preventDefault();
