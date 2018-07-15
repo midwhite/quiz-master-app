@@ -45,6 +45,10 @@ export default {
       },
     },
   },
+  buttons: {
+    back: '戻る',
+    edit: '編集',
+  },
   errors: {
     isRequired: '{0}をご入力ください。',
     isInvalid: '{0}が不正です。',

@@ -45,6 +45,10 @@ export default {
       },
     },
   },
+  buttons: {
+    back: 'Back',
+    edit: 'Edit',
+  },
   errors: {
     isRequired: '{0} is required.',
     isInvalid: '{0} is invalid.',

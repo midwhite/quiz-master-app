@@ -1,15 +1,15 @@
 <template>
-  <div id="ShowQuizComponent">
+  <div id="EditQuizComponent">
     <div class="menu-list">
-      <router-link :to="{ name: 'EditQuiz', params: quiz.id }">{{ $t('buttons.edit') }}</router-link>
+      <router-link :to="{ name: 'ShowQuiz', params: quiz.id }">{{ $t('buttons.back') }}</router-link>
     </div>
-    <quiz-detail :quiz="quiz" />
+    <quiz-form :quiz="quiz" />
   </div>
 </template>
 
 <script>
   import { mapState } from 'vuex';
-  import QuizDetail from './quiz-detail';
+  import QuizForm from './quiz-form';
 
   export default {
     computed: {
@@ -20,7 +20,7 @@
       },
     },
     components: {
-      QuizDetail,
+      QuizForm,
     },
   };
 </script>
