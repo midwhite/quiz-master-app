@@ -12,6 +12,9 @@ export default {
       noQuizFound: 'クイズがありません。新しいクイズを作成しましょう！',
       noExplanation: '解説はありません。',
     },
+    quizMode: {
+      title: 'クイズモード',
+    },
   },
   models: {
     user: {

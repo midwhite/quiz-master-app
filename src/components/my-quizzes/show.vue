@@ -1,9 +1,13 @@
 <template>
   <div id="ShowQuizComponent">
-    <div class="menu-list">
-      <router-link :to="{ name: 'EditQuiz', params: quiz.id }">{{ $t('buttons.edit') }}</router-link>
+    <div class="quiz-detail">
+      <quiz-detail :quiz="quiz" />
     </div>
-    <quiz-detail :quiz="quiz" />
+    <div class="menu-list clearfix">
+      <button class="danger-btn menu-item left">{{ $t('buttons.delete') }}</button>
+      <router-link :to="{ name: 'EditQuiz', params: { id: quiz.id } }" class="main-btn menu-item right">{{ $t('buttons.edit') }}</router-link>
+      <button @click="$router.go(-1)" class="default-btn menu-item right">{{ $t('buttons.back') }}</button>
+    </div>
   </div>
 </template>
 
@@ -24,3 +28,18 @@
     },
   };
 </script>
+
+<style scoped>
+  .quiz-detail {
+    padding: 10px 0px;
+  }
+  .menu-item {
+    width: 100px;
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+</style>

@@ -1,9 +1,8 @@
 <template>
   <div id="EditQuizComponent">
-    <div class="menu-list">
-      <router-link :to="{ name: 'ShowQuiz', params: quiz.id }">{{ $t('buttons.back') }}</router-link>
+    <div class="quiz-form">
+      <quiz-form :target-quiz="quiz" @submit="onSubmit" @cancel="onCancel" />
     </div>
-    <quiz-form :target-quiz="quiz" @submit="onSubmit" @cancel="onCancel" />
   </div>
 </template>
 
@@ -35,3 +34,9 @@
     },
   };
 </script>
+
+<style scoped>
+  .quiz-form {
+    padding: 15px 0px;
+  }
+</style>

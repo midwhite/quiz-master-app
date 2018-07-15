@@ -1,6 +1,8 @@
 <template>
   <header id="header">
-    <img :src="require('@/assets/images/shared/logo.png')" id="logo" />
+    <router-link to="/">
+      <img :src="require('@/assets/images/shared/logo.png')" id="logo" />
+    </router-link>
     <div class="main-btn sign-out" @click="signOut">{{ $t('components.welcome.signOut') }}</div>
   </header>
 </template>

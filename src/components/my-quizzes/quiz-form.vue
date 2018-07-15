@@ -27,7 +27,7 @@
 
       <div class="clearfix">
         <input type="submit" :value="$t('buttons.save')" id="quiz-form-submit" class="main-btn submit-btn" />
-        <input type="button" :value="$t('buttons.cancel')" id="quiz-form-submit" class="main-btn submit-btn" @click="onCancel" />
+        <input type="button" :value="$t('buttons.cancel')" id="quiz-form-cancel" class="default-btn submit-btn" @click="onCancel" />
       </div>
     </form>
   </div>
@@ -105,6 +105,6 @@
 <style scoped>
   .submit-btn {
     width: 100px;
-    float: left;
+    float: right;
   }
 </style>

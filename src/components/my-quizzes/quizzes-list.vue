@@ -1,7 +1,12 @@
 <template>
   <div id="QuizzesListComponent">
-    <div class="menu-list clearfix">
-      <router-link :to="{ name: 'NewQuiz' }" class="main-btn menu-item">{{ $t('buttons.create') }}</router-link>
+    <div class="menu-list row">
+      <div class="col">
+        <router-link :to="{ name: 'NewQuiz' }" class="menu-item main-btn">{{ $t('components.myQuizzes.newQuiz') }}</router-link>
+      </div>
+      <div class="col">
+        <router-link :to="{ name: 'QuizMode' }" class="menu-item main-btn">{{ $t('components.quizMode.title') }}</router-link>
+      </div>
     </div>
     <h1>{{ $t('components.myQuizzes.title') }}</h1>
     <div class="no-quiz" v-if="hasNoQuiz">
@@ -38,11 +43,6 @@
     margin: 0px;
   }
   .menu-list {
-    padding: 5px 0px;
-    margin: 0px -15px;
-  }
-  .menu-item {
-    width: 100px;
-    float: left;
+    padding-top: 10px;
   }
 </style>

@@ -21,9 +21,87 @@ a, a:hover, a:focus {
 }
 
 .main-btn:hover {
+  background: $BaseColorDark;
+  color: #FFF;
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+
+.main-btn:focus {
   background: #FFF;
   color: $BaseColor;
   box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+
+.main-btn[disabled], .main-btn[disabled]:hover, .main-btn[disabled]:focus {
+  background: $BaseColorLight;
+  border: 0px;
+  color: #FFF;
+}
+
+.default-btn {
+  margin: 5px;
+  padding: 6px 0;
+  border: 1px solid #FFF;
+  background: #FFF;
+  color: #616161;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  transition: all .3s 0s ease;
+}
+
+.default-btn:hover {
+  background: #F5F5F5;
+  color: #616161;
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+
+.default-btn:focus {
+  background: #616161;
+  color: #FFF;
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+
+.default-btn[disabled], .default-btn[disabled]:hover, .default-btn[disabled]:focus {
+  background: #FFF;
+  border: 0px;
+  color: #DDD;
+}
+
+.danger-btn {
+  margin: 5px;
+  padding: 6px 0;
+  border: 1px solid #F44336;
+  background: #F44336;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  transition: all .3s 0s ease;
+}
+
+.danger-btn:hover {
+  background: #D32F2F;
+  color: #FFF;
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+
+.danger-btn:focus {
+  background: #FFF;
+  color: #F44336;
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+
+.danger-btn[disabled], .danger-btn[disabled]:hover, .danger-btn[disabled]:focus {
+  background: #F44336;
+  border: 0px;
+  color: #DDD;
 }
 
 // for Quill Editor textbox

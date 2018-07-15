@@ -12,6 +12,9 @@ export default {
       noQuizFound: 'No quiz found. Please create your quiz!',
       noExplanation: 'No Explanation',
     },
+    quizMode: {
+      title: 'Quiz Mode',
+    },
   },
   models: {
     user: {
