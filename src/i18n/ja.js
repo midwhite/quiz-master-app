@@ -23,10 +23,10 @@ export default {
     quiz: {
       attributes: {
         answer: '回答',
-        answers: '回答',
         createdAt: '作成日時',
         explanation: '解説',
         isSelection: '選択式',
+        options: '選択肢',
         question: '問題',
         title: 'タイトル',
         updatedAt: '更新日時',

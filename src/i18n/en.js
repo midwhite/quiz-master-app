@@ -23,10 +23,10 @@ export default {
     quiz: {
       attributes: {
         answer: 'Answer',
-        answers: 'Answers',
         createdAt: 'created at',
         explanation: 'Explanation',
         isSelection: 'Selection',
+        options: 'Options',
         question: 'Question',
         title: 'Title',
         updatedAt: 'updated at',
