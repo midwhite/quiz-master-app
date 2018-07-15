@@ -23,7 +23,7 @@ export default {
     });
   },
   answerQuiz: ({ commit }, { quiz, answer }) => {
-    return api.post(`/v1/quizzes/${quiz.id}/answer`, { answer }).then(({ result }) => {
+    return api.post(`/v1/quizzes/${quiz.id}/check`, { answer }).then(({ result }) => {
       commit('setResultToAnswer', { quiz, result });
     });
   },

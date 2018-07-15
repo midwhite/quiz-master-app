@@ -13,9 +13,9 @@
       <p><router-link :to="{ name: 'NewQuiz' }">{{ $t('components.myQuizzes.noQuizFound') }}</router-link></p>
     </div>
     <div class="row">
-      <router-link :to="{ name: 'AnswerQuiz', params: { id: quiz.id } }" :key="'quiz-mode-quiz-' + quiz.id" v-for="quiz of myQuizzes" class="quiz-card-link col-4">
+      <div :key="'quiz-mode-quiz-' + quiz.id" v-for="quiz of myQuizzes" class="col-4">
         <quiz-card :quiz="quiz" />
-      </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -44,8 +44,5 @@
   }
   .menu-list {
     padding-top: 10px;
-  }
-  .quiz-card-link {
-    color: #212121;
   }
 </style>

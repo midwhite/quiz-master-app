@@ -46,7 +46,7 @@
     width: 80%;
     min-width: 300px;
     padding: 15px;
-    margin: 0px auto;
+    margin: 20px auto 0px;
     background: #EEE;
     box-shadow: 0px 0px 10px rgba(0,0,0,.5);
   }
