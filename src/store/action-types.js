@@ -17,6 +17,11 @@ export default {
       commit('replaceMyQuizz', data);
     });
   },
+  deleteQuiz: ({ commit }, { quiz }) => {
+    return api.delete(`/v1/quizzes/${quiz.id}`).then(() => {
+      commit('removeMyQuiz', { quiz });
+    });
+  },
   signUp: ({ commit }, { form }) => new Promise((resolve, reject) => {
     api.submit('/v1/users/sign_up', form).then((data) => {
       commit('signIn', data);

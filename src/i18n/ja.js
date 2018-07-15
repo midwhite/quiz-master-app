@@ -41,9 +41,13 @@ export default {
     cancel: 'キャンセル',
     comfirm: '確認',
     create: '新規作成',
+    delete: '削除',
     edit: '編集',
     list: '一覧',
     save: '保存',
+  },
+  warnings: {
+    beforeDelete: '本当に削除しますか？',
   },
   errors: {
     isRequired: '{0}をご入力ください。',

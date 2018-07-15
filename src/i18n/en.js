@@ -41,9 +41,13 @@ export default {
     cancel: 'Cancel',
     comfirm: 'Comfirm',
     create: 'Create',
+    delete: 'Delete',
     edit: 'Edit',
     list: 'List',
     save: 'Save',
+  },
+  warnings: {
+    beforeDelete: 'DELETE: Are you sure?',
   },
   errors: {
     isRequired: '{0} is required.',

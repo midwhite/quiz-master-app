@@ -12,6 +12,10 @@ export default {
     const index = state.myQuizzes.findIndex(_quiz => _quiz.id === quiz.id);
     state.myQuizzes.splice(index, 1, quiz);
   },
+  removeMyQuiz(state, { quiz }) {
+    const index = state.myQuizzes.findIndex(_quiz => _quiz.id === quiz.id);
+    state.myQuizzes.splice(index, 1);
+  },
   signIn(state, { user }) {
     // if use exists: sign in; else: sign out
     state.currentUser = user || {};

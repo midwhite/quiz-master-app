@@ -1,10 +1,10 @@
 <template>
-  <div id="ShowQuizComponent">
+  <div id="ShowQuizComponent" v-if="quiz">
     <div class="quiz-detail">
       <quiz-detail :quiz="quiz" />
     </div>
     <div class="menu-list clearfix">
-      <button class="danger-btn menu-item left">{{ $t('buttons.delete') }}</button>
+      <button @click="onDelete" class="danger-btn menu-item left">{{ $t('buttons.delete') }}</button>
       <router-link :to="{ name: 'EditQuiz', params: { id: quiz.id } }" class="main-btn menu-item right">{{ $t('buttons.edit') }}</router-link>
       <button @click="$router.go(-1)" class="default-btn menu-item right">{{ $t('buttons.back') }}</button>
     </div>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex';
+  import { mapState, mapActions } from 'vuex';
   import QuizDetail from './quiz-detail';
 
   export default {
@@ -21,6 +21,16 @@
       quiz() {
         const quizId = Number(this.$route.params.id);
         return this.myQuizzes.find(quiz => quiz.id === quizId);
+      },
+    },
+    methods: {
+      ...mapActions(['deleteQuiz']),
+      onDelete() {
+        if (confirm(this.$t('warnings.beforeDelete'))) {
+          this.deleteQuiz({ quiz: this.quiz }).then(() => {
+            this.$router.replace({ name: 'QuizzesList' });
+          });
+        }
       },
     },
     components: {
