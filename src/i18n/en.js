@@ -24,22 +24,12 @@ export default {
       attributes: {
         answer: 'Answer',
         answers: 'Answers',
-        canScorePartial: 'Enable Partial Score',
         createdAt: 'created at',
         explanation: 'Explanation',
-        hasMultiAnswers: 'Multiple Answers',
         isSelection: 'Selection',
         question: 'Question',
         title: 'Title',
         updatedAt: 'updated at',
-      },
-      canScorePartial: {
-        true: 'enable',
-        false: 'diable',
-      },
-      hasMultiAnswers: {
-        true: 'enable',
-        false: 'diable',
       },
       isSelection: {
         true: 'Yes',
