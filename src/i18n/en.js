@@ -62,6 +62,9 @@ export default {
   messages: {
     created: '{0} is created.',
     saved: '{0} is saved.',
+    thanksForSignUp: 'Welcome to QuizMaster!',
+    thanksForSignIn: 'You succeed in signing in.',
+    thanksForSignOut: 'You succeed in signing out.',
   },
   warnings: {
     beforeDelete: 'DELETE: Are you sure?',

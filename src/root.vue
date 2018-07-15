@@ -1,11 +1,13 @@
 <template>
-  <welcome-component v-if="!isSignedIn" />
-  <div id="app" v-else>
-    <header-component />
-    <main id="main" class="container-fluid">
-      <router-view />
-    </main>
-    <footer-component />
+  <div>
+    <welcome-component v-if="!isSignedIn" />
+    <div id="app" v-if="isSignedIn">
+      <header-component />
+      <main id="main" class="container-fluid">
+        <router-view />
+      </main>
+      <footer-component />
+    </div>
     <snackbar-component v-if="message" />
   </div>
 </template>

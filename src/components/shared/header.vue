@@ -3,7 +3,7 @@
     <router-link to="/">
       <img :src="require('@/assets/images/shared/logo.png')" id="logo" />
     </router-link>
-    <div class="main-btn sign-out" @click="signOut">{{ $t('components.welcome.signOut') }}</div>
+    <div class="main-btn sign-out" @click="onSignOut">{{ $t('components.welcome.signOut') }}</div>
   </header>
 </template>
 
@@ -13,6 +13,12 @@
   export default {
     methods: {
       ...mapActions(['signOut']),
+      onSignOut() {
+        const message = this.$t('messages.thanksForSignOut');
+        this.signOut().then(() => {
+          this.$store.commit('setMessage', message);
+        });
+      },
     },
   };
 </script>

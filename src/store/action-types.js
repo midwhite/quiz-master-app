@@ -50,7 +50,10 @@ export default {
       commit('signIn', data);
     }),
   signOut: ({ commit }) => {
-    commit('signIn', {});
+    return new Promise((resolve) => {
+      commit('signIn', {});
+      resolve();
+    });
   },
 };
 /* eslint-enable */

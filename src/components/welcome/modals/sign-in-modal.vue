@@ -79,17 +79,17 @@
         }
       },
       submitSignUp() {
+        const message = this.$t('messages.thanksForSignUp');
         this.signUp({ form: this.$el.querySelector('#SignUpForm') }).then(() => {
           this.$emit('close');
-        }).catch((error) => {
-          this.errors.push(...error.response.data.errors);
+          this.$store.commit('setMessage', message);
         });
       },
       submitSignIn() {
+        const message = this.$t('messages.thanksForSignIn');
         this.signIn({ form: this.$el.querySelector('#SignUpForm') }).then(() => {
           this.$emit('close');
-        }).catch((error) => {
-          this.errors.push(...error.response.data.errors);
+          this.$store.commit('setMessage', message);
         });
       },
       validateUser() {
