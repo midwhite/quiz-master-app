@@ -25,3 +25,8 @@ a, a:hover, a:focus {
   color: $BaseColor;
   box-shadow: 0 0 5px rgba(0,0,0,.5);
 }
+
+// for Quill Editor textbox
+.ql-editor {
+  min-height: 200px;
+}

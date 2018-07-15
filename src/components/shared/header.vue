@@ -24,6 +24,7 @@
     left: 0px;
     right: 0px;
     height: $HeaderHight;
+    background: #FFF;
     box-shadow: 0 0 10px rgba(0,0,0,.5);
   }
   #logo {

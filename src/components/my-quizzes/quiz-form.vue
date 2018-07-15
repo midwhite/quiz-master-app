@@ -6,24 +6,17 @@
       </div>
 
       <div class="form-group">
-        <textarea name="question" v-model="quiz.question" class="form-control" :placeholder="$t('models.quiz.attributes.question')"></textarea>
-      </div>
-
-      <div class="form-group">
-        <p>{{ $t('models.quiz.attributes.isSelection') }}</p>
-        <label for="quiz-form-is-selection-true">
-          <input type="radio" name="isSelection" :value="true" v-model="quiz.isSelection" id="quiz-form-is-selection-true" />
-          <span>{{ $t('models.quiz.isSelection.true') }}</span>
-        </label>
-        <label for="quiz-form-is-selection-false">
-          <input type="radio" name="isSelection" :value="false" v-model="quiz.isSelection" id="quiz-form-is-selection-false" />
-          <span>{{ $t('models.quiz.isSelection.false') }}</span>
-        </label>
+        <quill-editor :content="quiz.question" :options="questionEditorOption" @change="onQuestionEditorChange" />
       </div>
 
       <div class="form-group">
         <label for="quiz-form-answer">{{ $t('models.quiz.attributes.answer') }}</label>
-        <input type="text" name="answer" v-model="quiz.correctAnswer" id="quiz-form-answer" class="form-control" :placeholder="$t('models.quiz.attributes.answer')" />
+        <input type="text" name="answer" v-model="quiz.answer" id="quiz-form-answer" class="form-control" :placeholder="$t('models.quiz.attributes.answer')" />
+      </div>
+
+      <div class="form-group">
+        <label for="quiz-form-explanation">{{ $t('models.quiz.attributes.explanation') }}</label>
+        <quill-editor :content="quiz.explanation" :options="explanationEditorOption" @change="onExplanationEditorChange" />
       </div>
 
       <div class="clearfix">
@@ -35,9 +28,35 @@
 </template>
 
 <script>
+  import { quillEditor } from 'vue-quill-editor';
+  import 'quill/dist/quill.core.css';
+  import 'quill/dist/quill.snow.css';
+  import 'quill/dist/quill.bubble.css';
+
   export default {
-    props: ['quiz'],
+    data: () => ({
+      quiz: {},
+    }),
+    props: ['target-quiz'],
+    computed: {
+      questionEditorOption() {
+        return {
+          placeholder: this.$t('models.quiz.attributes.question'),
+        };
+      },
+      explanationEditorOption() {
+        return {
+          placeholder: this.$t('models.quiz.attributes.explanation'),
+        };
+      },
+    },
     methods: {
+      onQuestionEditorChange({ html }) {
+        this.quiz.question = html;
+      },
+      onExplanationEditorChange({ html }) {
+        this.quiz.explanation = html;
+      },
       onSubmit(event) {
         event.preventDefault();
         this.$emit('submit', this.quiz);
@@ -46,8 +65,13 @@
         this.$emit('cancel');
       },
     },
+    components: {
+      quillEditor,
+    },
     created() {
-      this.quiz.isSelection = !!this.quiz.isSelection;
+      if (this.targetQuiz) {
+        this.quiz = JSON.parse(JSON.stringify(this.targetQuiz));
+      }
     },
   };
 </script>
