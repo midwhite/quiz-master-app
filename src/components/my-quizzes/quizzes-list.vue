@@ -2,10 +2,10 @@
   <div id="QuizzesListComponent">
     <div class="menu-list row">
       <div class="col">
-        <router-link :to="{ name: 'NewQuiz' }" class="menu-item main-btn">{{ $t('components.myQuizzes.newQuiz') }}</router-link>
+        <router-link :to="{ name: 'QuizMode' }" class="menu-item main-btn" v-if="!hasNoQuiz">{{ $t('components.quizMode.title') }}</router-link>
       </div>
       <div class="col">
-        <router-link :to="{ name: 'QuizMode' }" class="menu-item main-btn">{{ $t('components.quizMode.title') }}</router-link>
+        <router-link :to="{ name: 'NewQuiz' }" class="menu-item main-btn">{{ $t('components.myQuizzes.newQuiz') }}</router-link>
       </div>
     </div>
     <h1>{{ $t('components.myQuizzes.title') }}</h1>
