@@ -1,8 +1,9 @@
 import api from './api';
 
+/* eslint-disable arrow-body-style */
 export default {
   getQuizzes: ({ commit }, params = {}) => {
-    api.get('/v1/quizzes', params).then((data) => {
+    return api.get('/v1/quizzes', params).then((data) => {
       commit('setMyQuizzes', data);
     });
   },
@@ -30,3 +31,4 @@ export default {
     commit('signIn', {});
   },
 };
+/* eslint-enable */
