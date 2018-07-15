@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VueI18n from 'vue-i18n';
+import VueQuillEditor from 'vue-quill-editor';
 import Root from './root';
 import store from './store';
 import router from './router';
@@ -11,6 +12,7 @@ import './assets/css/global.scss';
 
 Vue.use(Vuex);
 Vue.use(VueI18n);
+Vue.use(VueQuillEditor);
 
 Vue.config.productionTip = false;
 
