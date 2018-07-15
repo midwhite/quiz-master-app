@@ -2,6 +2,7 @@ import Constants from '@/constants';
 
 class PrivateStorageService {
   static getValue(key) {
+    if (!window.QuizMasterStorage) { window.QuizMasterStorage = {}; }
     return localStorage.getItem(key) || window.QuizMasterStorage[key];
   }
 
