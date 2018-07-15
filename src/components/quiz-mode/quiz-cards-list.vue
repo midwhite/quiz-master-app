@@ -13,15 +13,15 @@
       <p><router-link :to="{ name: 'NewQuiz' }">{{ $t('components.myQuizzes.noQuizFound') }}</router-link></p>
     </div>
     <div class="row">
-      <div :key="'quiz-mode-quiz-'+quiz.id" v-for="quiz of myQuizzes" class="col-4">
+      <router-link :to="{ name: 'AnswerQuiz', params: { id: quiz.id } }" :key="'quiz-mode-quiz-' + quiz.id" v-for="quiz of myQuizzes" class="quiz-card-link col-4">
         <quiz-card :quiz="quiz" />
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
-  import { mapState, mapActions } from 'vuex';
+  import { mapState } from 'vuex';
   import QuizCard from './quiz-card';
 
   export default {
@@ -30,9 +30,6 @@
       hasNoQuiz() {
         return this.myQuizzes.length === 0;
       },
-    },
-    methods: {
-      ...mapActions(['answerQuiz']),
     },
     components: {
       QuizCard,
@@ -47,5 +44,8 @@
   }
   .menu-list {
     padding-top: 10px;
+  }
+  .quiz-card-link {
+    color: #212121;
   }
 </style>

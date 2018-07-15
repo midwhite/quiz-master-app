@@ -9,6 +9,7 @@ import NewQuizComponent from '@/components/my-quizzes/new';
 // QuizMode
 import QuizModeComponent from '@/components/quiz-mode/';
 import QuizCardsListComponent from '@/components/quiz-mode/quiz-cards-list';
+import AnswerQuizComponent from '@/components/quiz-mode/answer-quiz';
 
 Vue.use(Router);
 
@@ -23,6 +24,7 @@ export default new Router({
     ] },
     { path: '/quiz-mode', component: QuizModeComponent, children: [
       { path: '/quiz-mode', name: 'QuizMode', component: QuizCardsListComponent },
+      { path: '/quiz-mode/:id', name: 'AnswerQuiz', component: AnswerQuizComponent },
     ] },
   ],
 });
