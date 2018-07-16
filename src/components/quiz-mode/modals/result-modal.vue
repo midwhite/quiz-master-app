@@ -29,7 +29,7 @@
     props: ['answer', 'correct-answer', 'explanation'],
     computed: {
       resultName() {
-        return this.answer.result ? 'correct' : 'incorrect';
+        return this.answer && this.answer.result ? 'correct' : 'incorrect';
       },
       iconUrl() {
         return `/static/img/quizzes/${this.resultName}.png`;

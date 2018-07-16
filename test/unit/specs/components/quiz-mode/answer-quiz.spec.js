@@ -15,24 +15,19 @@ describe('quiz-mode/answer-quiz.vue', () => {
   beforeEach(() => {
     // generate spies
     const $store = {
-      commit: () => new Promise(resolve => resolve()),
-      dispatch: () => new Promise(resolve => resolve()),
+      commit: () => new Promise(resolve => resolve({})),
+      dispatch: () => new Promise(resolve => resolve({ quiz: {} })),
       state: { myQuizzes },
     };
     commit = sinon.spy($store, 'commit');
     dispatch = sinon.spy($store, 'dispatch');
     // mount component
     wrapper = shallowMount(AnswerQuizComponent, {
-      computed: {
-        // to escape `this.$route.params.id`.
-        // in detail: https://github.com/midwhite/quiz-master-app/issues/2
-        quizId: () => 1,
-      },
-      mocks: {
-        $t: key => key,
-        $store,
-      },
-      stubs: ['result-modal'],
+      // to escape `this.$route.params.id`.
+      // in detail: https://github.com/midwhite/quiz-master-app/issues/2
+      computed: { quizId: () => 1 },
+      mocks: { $t: key => key, $store },
+      stubs: ['result-modal', 'router-link'],
       router,
       localVue,
     });

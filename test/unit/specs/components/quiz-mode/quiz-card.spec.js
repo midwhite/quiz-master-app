@@ -6,12 +6,13 @@ import { currentUser } from '../../factories/users';
 
 const localVue = createLocalVue();
 localVue.use(VueRouter);
-const router = new VueRouter();
+const router = new VueRouter([{ name: 'AnswerQuiz' }]);
 
 describe('quiz-mode/quiz-card.vue', () => {
   const createWrapper = propsData => mount(QuizCardComponent, {
     propsData,
     mocks: { $t: key => key },
+    // stubs: ['router-link'],
     localVue,
     router,
   });

@@ -10,10 +10,8 @@ describe('quizz-form.vue', () => {
     // add spy to wrapper as mocks with i18n mock
     spy = sinon.stub();
     wrapper = shallowMount(QuizFormComponent, {
-      mocks: {
-        $t: key => key,
-        $emit: spy,
-      },
+      mocks: { $t: key => key, $emit: spy },
+      stubs: ['router-link'],
     });
   });
 

@@ -51,9 +51,15 @@ describe('util.js', () => {
 
   describe('randomStr()', () => {
     it('should return random characters', () => {
-      const result = Util.randomStr(10);
-      expect(result.length).to.equal(10);
-      expect(result).to.be.a('string');
+      // check character length
+      expect(Util.randomStr(10).length).to.eq(10);
+      // check uniqueness
+      const results = new Array(5).map(() => Util.randomStr(10));
+      results.push(Util.randomStr(10));
+      results.push(Util.randomStr(10));
+      results.push(Util.randomStr(10));
+      const uniqueResults = results.filter((x, i, self) => self.indexOf(x) === i);
+      expect(uniqueResults.length).to.eq(3);
     });
   });
 });

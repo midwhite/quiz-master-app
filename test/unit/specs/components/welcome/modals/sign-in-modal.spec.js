@@ -9,6 +9,7 @@ describe('welcome/modals/sign-in-modal.vue', () => {
   beforeEach(() => {
     // prepare dispatch spy
     $store = {
+      commit: () => new Promise(resolve => resolve()),
       dispatch: () => new Promise(resolve => resolve()),
     };
     dispatchSpy = sinon.spy($store, 'dispatch');
