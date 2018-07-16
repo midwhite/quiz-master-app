@@ -19,6 +19,10 @@ export default {
       yourAnswer: 'あなたの回答',
       correctAnswer: '模範回答',
     },
+    errors: {
+      notFound: '404 Not Found',
+      notFoundMessage: 'お探しのページが見つかりませんでした。',
+    },
   },
   models: {
     user: {

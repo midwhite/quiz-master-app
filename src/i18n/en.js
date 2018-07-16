@@ -19,6 +19,10 @@ export default {
       yourAnswer: 'Your Answer',
       correctAnswer: 'Correct Answer',
     },
+    errors: {
+      notFound: '404 Not Found',
+      notFoundMessage: 'What you are looking for is not found.',
+    },
   },
   models: {
     user: {
