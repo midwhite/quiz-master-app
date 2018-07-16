@@ -30,7 +30,7 @@
   };
 </script>
 
-<style>
+<style scoped>
   h3 {
     font-size: 14px;
   }

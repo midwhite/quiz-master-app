@@ -9,6 +9,7 @@ export default {
     myQuizzes: {
       title: 'クイズ一覧',
       newQuiz: '新規クイズ作成',
+      nextPage: '次のページへ',
       noQuizFound: 'クイズがありません。新しいクイズを作成しましょう！',
       noExplanation: '解説はありません。',
     },

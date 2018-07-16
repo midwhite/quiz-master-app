@@ -9,6 +9,7 @@ export default {
     myQuizzes: {
       title: 'Quiz List',
       newQuiz: 'New Quiz',
+      nextPage: 'Next Page',
       noQuizFound: 'No quiz found. Please create your quiz!',
       noExplanation: 'No Explanation',
     },
