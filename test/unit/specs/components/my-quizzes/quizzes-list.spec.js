@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils';
 import QuizzesListComponent from '@/components/my-quizzes/quizzes-list';
 import { myQuizzes } from '../../factories/quizzes';
+import { currentUser } from '../../factories/users';
 
 describe('quizzes-list.vue', () => {
   let $store;
@@ -12,7 +13,7 @@ describe('quizzes-list.vue', () => {
       dispatch: () => new Promise(resolve => resolve()),
       commit: () => new Promise(resolve => resolve()),
       state: {
-        currentUser: { timezone: 'Asia/Tokyo' },
+        currentUser,
         myQuizzes,
       },
     };

@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import QuizFormComponent from '@/components/my-quizzes/quiz-form';
-import { myQuizzes } from '../../factories/quizzes';
+import { quiz } from '../../factories/quizzes';
 
 describe('quizz-form.vue', () => {
   let wrapper;
@@ -18,9 +18,7 @@ describe('quizz-form.vue', () => {
   });
 
   it('should emit submit event with valid quiz object', () => {
-    wrapper.setData({
-      quiz: myQuizzes[0],
-    });
+    wrapper.setData({ quiz });
     wrapper.find('#quiz-form-submit').trigger('click');
     expect(wrapper.vm.errors.length).to.equal(0);
     expect(spy.calledWith('submit')).to.equal(true);
