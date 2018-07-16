@@ -13,7 +13,7 @@
       <p><router-link :to="{ name: 'NewQuiz' }">{{ $t('components.myQuizzes.noQuizFound') }}</router-link></p>
     </div>
     <div class="row">
-      <div :key="'quiz-mode-quiz-' + quiz.id" v-for="quiz of myQuizzes" class="col-4">
+      <div :key="'quiz-mode-quiz-' + quiz.id" v-for="quiz of myQuizzes" class="col-12 col-sm-4 col-md-3 col-lg-2">
         <quiz-card :quiz="quiz" />
       </div>
     </div>
