@@ -13,7 +13,7 @@
       <p><router-link :to="{ name: 'NewQuiz' }">{{ $t('components.myQuizzes.noQuizFound') }}</router-link></p>
     </div>
     <div class="quizzes-list" v-else>
-      <quiz :quiz="quiz" :key="'my-quiz-thumbnail-' + quiz.id" v-for="quiz of quizzes" />
+      <quiz :quiz="quiz" :user="currentUser" :key="'my-quiz-thumbnail-' + quiz.id" v-for="quiz of quizzes" />
     </div>
     <div class="pagination-wrapper" v-if="hasNextPage">
       <div class="load-more" @click="goNextPage">{{ $t('components.myQuizzes.nextPage') }}</div>
@@ -31,7 +31,7 @@
       size: 5,
     }),
     computed: {
-      ...mapState(['myQuizzes']),
+      ...mapState(['myQuizzes', 'currentUser']),
       quizzes() {
         // pagination
         const position = [];

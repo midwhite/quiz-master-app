@@ -10,15 +10,13 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex';
   import Util from '@/util';
 
   export default {
-    props: ['quiz'],
+    props: ['quiz', 'user'],
     computed: {
-      ...mapState(['currentUser']),
       createdAt() {
-        const createdAt = Util.timeWithZone(this.quiz.createdAt, this.currentUser.timezone);
+        const createdAt = Util.timeWithZone(this.quiz.createdAt, this.user.timezone);
         return createdAt.format('YYYY-MM-DD HH:mm');
       },
     },
