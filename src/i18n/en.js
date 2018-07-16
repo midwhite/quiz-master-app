@@ -19,6 +19,9 @@ export default {
       yourAnswer: 'Your Answer',
       correctAnswer: 'Correct Answer',
     },
+    config: {
+      language: '日本語に切り替え',
+    },
     errors: {
       notFound: '404 Not Found',
       notFoundMessage: 'What you are looking for is not found.',

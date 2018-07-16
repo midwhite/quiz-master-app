@@ -19,6 +19,9 @@ export default {
       yourAnswer: 'あなたの回答',
       correctAnswer: '模範回答',
     },
+    config: {
+      language: 'Switch to English',
+    },
     errors: {
       notFound: '404 Not Found',
       notFoundMessage: 'お探しのページが見つかりませんでした。',
