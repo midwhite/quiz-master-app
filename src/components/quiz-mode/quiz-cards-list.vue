@@ -14,7 +14,7 @@
     </div>
     <div class="row">
       <div :key="'quiz-mode-quiz-' + quiz.id" v-for="quiz of myQuizzes" class="col-12 col-sm-4 col-md-3 col-lg-2">
-        <quiz-card :quiz="quiz" />
+        <quiz-card :quiz="quiz" :current-user="currentUser" />
       </div>
     </div>
   </div>
@@ -26,7 +26,7 @@
 
   export default {
     computed: {
-      ...mapState(['myQuizzes']),
+      ...mapState(['myQuizzes', 'currentUser']),
       hasNoQuiz() {
         return this.myQuizzes.length === 0;
       },

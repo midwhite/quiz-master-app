@@ -9,13 +9,11 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex';
   import Util from '@/util';
 
   export default {
-    props: ['quiz'],
+    props: ['quiz', 'current-user'],
     computed: {
-      ...mapState(['currentUser']),
       resultMark() {
         if (!this.quiz.answered) {
           return null;

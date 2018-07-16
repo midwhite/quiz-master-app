@@ -58,6 +58,9 @@
 </script>
 
 <style scoped>
+  h1 {
+    padding: 10px 0px;
+  }
   .answer-wrapper {
     width: 80%;
     min-width: 300px;
