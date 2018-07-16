@@ -16,6 +16,15 @@ Vue.use(VueQuillEditor);
 
 Vue.config.productionTip = false;
 
+if (process.env.NODE_ENV === 'production') {
+  // watch uncaught errors on component
+  Vue.config.errorHandler = (_, vm) => {
+    // [TODO] notify error to server
+    // display error message with snackbar
+    vm.$store.commit('setMessage', vm.$t('components.errors.unexpectedError'));
+  };
+}
+
 /* eslint-disable no-new */
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({

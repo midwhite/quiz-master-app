@@ -25,6 +25,7 @@ export default {
     errors: {
       notFound: '404 Not Found',
       notFoundMessage: 'What you are looking for is not found.',
+      unexpectedError: 'Unexpected error occured. Please try again after a while.',
     },
   },
   models: {

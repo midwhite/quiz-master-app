@@ -25,6 +25,7 @@ export default {
     errors: {
       notFound: '404 Not Found',
       notFoundMessage: 'お探しのページが見つかりませんでした。',
+      unexpectedError: '予期しないエラーが発生しました。しばらく後に再度お試しください。',
     },
   },
   models: {

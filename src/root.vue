@@ -33,6 +33,9 @@
       HeaderComponent,
       FooterComponent,
     },
+    updated() {
+      // [TODO] set Google Analytics
+    },
     created() {
       // Auto Login
       if (StorageService.getToken()) {
