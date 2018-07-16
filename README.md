@@ -1,10 +1,21 @@
 # QuizMaster
 
-> QuizMaster for Front Side
+- Front Side for [QuizMaster](https://github.com/midwhite/QuizMaster)
+- Please read [this](https://github.com/midwhite/QuizMaster/blob/master/README.md) to build API server.
+
+## environment
+
+```bash
+$ node -v
+v10.4.1
+
+$ npm -v
+6.1.0
+```
 
 ## Build Setup
 
-``` bash
+```bash
 # clone project
 git clone git@github.com:midwhite/quiz-master-app.git
 
