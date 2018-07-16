@@ -2,7 +2,7 @@
   <div id="AnswerQuizComponent" v-if="quiz">
     <h1>{{ $t('components.quizMode.letsAnswer') }}</h1>
     <h2>{{ quiz.title }}</h2>
-    <div v-html="quiz.question"></div>
+    <div id="quiz-mode-question-wrapper" v-html="quiz.question"></div>
     <div class="answer-wrapper">
       <form @submit="onSubmit" class="answer-form">
         <label for="quiz-mode-answer">{{ $t('models.quiz.attributes.answer') }}</label>
@@ -27,8 +27,11 @@
     }),
     computed: {
       ...mapState(['myQuizzes']),
+      quizId() {
+        return Number(this.$route.params.id);
+      },
       quiz() {
-        const quizId = Number(this.$route.params.id);
+        const quizId = this.quizId;
         return this.myQuizzes.find(quiz => quiz.id === quizId);
       },
     },
@@ -37,7 +40,8 @@
       onSubmit(event) {
         event.preventDefault();
         if (!this.answer.content) {
-          this.$store.commit('setMessage', this.$t('errors.isRequired', [this.$t('models.quiz.attributes.answer')]));
+          const message = this.$t('errors.isRequired', [this.$t('models.quiz.attributes.answer')]);
+          this.$store.commit('setMessage', message);
           return;
         }
         this.answerQuiz({ answer: this.answer, quiz: this.quiz }).then((data) => {
