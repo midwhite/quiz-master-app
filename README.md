@@ -17,23 +17,20 @@ $ npm -v
 
 ```bash
 # clone project
-git clone git@github.com:midwhite/quiz-master-app.git
+$ git clone git@github.com:midwhite/quiz-master-app.git
 
 # install dependencies
-npm install
+$ npm install
 
 # serve with hot reload at localhost:8080
-npm run dev
+$ npm start
 
 # build for production with minification
-npm run build
+$ npm run build
 
 # build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
+$ npm run build --report
 
 # run all tests
-npm test
+$ npm test
 ```
