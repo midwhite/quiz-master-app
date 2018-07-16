@@ -6,7 +6,7 @@ import { currentUser } from '../../factories/users';
 
 describe('quizz.vue', () => {
   const localVue = createLocalVue();
-  const router = new VueRouter()
+  const router = new VueRouter();
 
   let wrapper;
 

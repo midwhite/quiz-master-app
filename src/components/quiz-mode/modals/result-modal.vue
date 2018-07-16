@@ -11,7 +11,7 @@
       <p class="title">{{ $t('components.quizMode.correctAnswer') }}</p>
       <div class="content">{{ correctAnswer }}</div>
       <p class="title">{{ $t('models.quiz.attributes.explanation') }}</p>
-      <div v-html="explanation" v-if="explanation"></div>
+      <div id="explanation-wrapper" v-html="explanation" v-if="explanation"></div>
       <div class="no-explanation" v-else>{{ $t('components.myQuizzes.noExplanation') }}</div>
     </div>
     <div slot="footer">
